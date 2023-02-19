@@ -1,0 +1,76 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+format = "$all"
+continuation_prompt = "▶▶"
+ 
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[👉](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[X](bold red)"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[git_branch]
+format = "[$symbol $branch]($style) - "
+symbol = "- 🌱"
+truncation_length = 25
+truncation_symbol = "..."
+
+[git_commit]
+commit_hash_length = 25
+tag_symbol = "🔖 "
+
+[git_state]
+# progress_divider = " of "
+cherry_pick = "🍒 "
+
+[git_status]
+conflicted = ""
+ahead = ""
+behind = ""
+diverged = "!"
+up_to_date = "up to date!"
+untracked = "?"
+stashed = "+/-"
+modified = '[+/-\($count\)](red)'
+staged = '[++\($count\)](green)'
+renamed = ""
+deleted = "-"
+format = '([$up_to_date$conflicted$deleted$renamed$modified$staged$behind$untracked]($style)) -'
+#format = '([$all_status]($style))'
+
+[kubernetes]
+format = '(ctx: $cluster)(bold  green) - '
+disabled = true
+style = "dimmed green"
+detect_extensions = ["tf","yaml", "toml", "yml"]                                                                                                        
+detect_folders = [".kube"] 
+
+[terraform]
+format = "[$symbol$workspace]($style) - "
+symbol = " 📂 "
+detect_extensions = ["tf", "tfplan", "tfstate"]
+detect_folders = [".terraform"]
+
+[aws]
+format = '[$symbol($profile)(\($region\))(\[$duration\])]($style) '
+style = "bold green"
+symbol = "🌤 "
+
+[directory]
+read_only = ""
+truncate_to_repo = true
+truncation_length = 10
+truncation_symbol = ""
+
+[docker_context]
+symbol = "Docker ctx:"
+
+[nodejs]
+symbol = "NodeJS:"

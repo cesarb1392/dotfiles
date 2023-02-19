@@ -1,0 +1,23 @@
+Host *
+    ServerAliveInterval 300
+    TCPKeepAlive yes
+    ForwardAgent yes
+    GSSAPIAuthentication yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    Protocol 2
+    AddKeysToAgent yes
+    ServerAliveInterval 30
+    ServerAliveCountMax 4
+    Compression yes
+
+Host * !banana
+    LogLevel INFO
+
+Host banana
+    HostName x.x.x.x
+    PreferredAuthentications publickey
+    IdentitiesOnly yes
+    User x
+    IdentityFile ~/.ssh/id_rsa
+

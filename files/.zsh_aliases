@@ -1,0 +1,43 @@
+
+# ykman
+alias aws-login='unset AWS_VAULT && aws-vault login -t $(ykman oath accounts code <ykman_profile> --single) <aws_profile>'
+alias aws-exec='unset AWS_VAULT && aws-vault exec -t $(ykman oath accounts code <ykman_profile> --single) <aws_profile>'
+alias okta='export OKTA_API_TOKEN=$(op item list --tags Okta | op item get OKTA --fields OKTA_API_TOKEN)'
+
+# Terraform
+alias tf="terraform"
+alias tcl="terraform fmt -recursive . && terraform-docs ."
+alias init="terraform init"
+alias plan="terraform plan"
+alias apply="terraform apply"
+alias save-plan=" plan -out tf.plan && terraform show -no-color tf.plan > tfplan.txt"
+
+# stuff
+alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias webstorm="open -a /Applications/WebStorm.app"
+#alias chromium="open -n -a /Applications/Chromium.app/Contents/MacOS/Chromium  --args --user-data-dir="~/chromium_dev_test" --disable-web-security"
+#alias chrome="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --disable-web-security"
+alias list="exa -l"
+
+# K8s
+alias k='kubectl'       
+alias kctx='kubectx'
+alias info="kubectl cluster-info"
+alias view="kubectl config view"
+alias context="kubectl config current-context"
+alias ns="kubectl get ns"
+alias services="kubectl get services"
+alias nodes="kubectl get nodes"
+alias pods="kubectl get pods --all-namespaces"
+
+# git
+## see also  ~/.gitconfig
+alias g='git'
+alias ga='git add'
+alias gs="git status"
+alias gc='git checkout'
+alias gb='git checkout -b'
+alias gpu='git push'
+alias gpl='git pull'
+alias semver='git semver'
+alias gopen="git remote -v | awk '/origin.*push/ {print \$2}' | xargs open"
