@@ -1,8 +1,13 @@
-
 # ykman
-alias aws-login='unset AWS_VAULT && aws-vault login -t $(ykman oath accounts code <ykman_profile> --single) <aws_profile>'
-alias aws-exec='unset AWS_VAULT && aws-vault exec -t $(ykman oath accounts code <ykman_profile> --single) <aws_profile>'
+# alias aws-login='osascript ~/scripts/aws_logout.scpt && aws-vault login -t $(ykman oath accounts code aws --single)'
+alias aws-login='unset AWS_VAULT && aws-vault login -t $(ykman oath accounts code aws --single)'
+alias aws-exec='unset AWS_VAULT && aws-vault exec -t $(ykman oath accounts code aws --single)'
+alias auth='unset AWS_VAULT &&  aws-vault exec vanmoof -t $(ykman oath accounts code aws --single)'
+
+# 1pass
 alias okta='export OKTA_API_TOKEN=$(op item list --tags Okta | op item get OKTA --fields OKTA_API_TOKEN)'
+alias aws-login2='unset AWS_VAULT && aws-vault login -t $(ykman oath accounts code aws --single)'
+alias aws-exec2='unset AWS_VAULT && aws-vault exec -t $(ykman oath accounts code aws --single)'
 
 # Terraform
 alias tf="terraform"
@@ -10,18 +15,22 @@ alias tcl="terraform fmt -recursive . && terraform-docs ."
 alias init="terraform init"
 alias plan="terraform plan"
 alias apply="terraform apply"
-alias save-plan=" plan -out tf.plan && terraform show -no-color tf.plan > tfplan.txt"
+alias save-plan="plan -out tf.plan && terraform show -no-color tf.plan > tfplan.txt"
 
 # stuff
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias webstorm="open -a /Applications/WebStorm.app"
-#alias chromium="open -n -a /Applications/Chromium.app/Contents/MacOS/Chromium  --args --user-data-dir="~/chromium_dev_test" --disable-web-security"
+#alias chromium="open -n -a /Applications/Chromium.app/Contents/MacOS/Chromium  --args --user-data-dir='~/chromium_dev_test' --disable-web-security"
 #alias chrome="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --disable-web-security"
 alias list="exa -l"
+alias -s txt=micro
+alias -s py=micro
+alias -s json=micro
+alias -s yaml=micro
 
 # K8s
-alias k='kubectl'       
-alias kctx='kubectx'
+alias k="kubectl"
+alias kctx="kubectx"
 alias info="kubectl cluster-info"
 alias view="kubectl config view"
 alias context="kubectl config current-context"
@@ -32,12 +41,12 @@ alias pods="kubectl get pods --all-namespaces"
 
 # git
 ## see also  ~/.gitconfig
-alias g='git'
-alias ga='git add'
+alias g="git"
+alias ga="git add"
 alias gs="git status"
-alias gc='git checkout'
-alias gb='git checkout -b'
-alias gpu='git push'
-alias gpl='git pull'
-alias semver='git semver'
-alias gopen="git remote -v | awk '/origin.*push/ {print \$2}' | xargs open"
+alias gc="git checkout"
+alias gb="git checkout -b"
+alias gpu="git push"
+alias gpl="git pull"
+alias semver="git semver"
+alias gopen="git remote -v | head -n 1 | awk -F "@" '{print $2}' | awk -F " " '{print $1}' | sed 's/:/\//g' | sed 's/.git//g' | awk '{print "http://"$1}' | xargs open"

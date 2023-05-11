@@ -14,14 +14,14 @@ export GPG_TTY=$(tty)
 export LANG="en_US.UTF-8"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 export KUBECONFIG="$HOME/.kube/kubeconfig"
 
 export AWS_VAULT_BACKEND="file"
 export AWS_VAULT_FILE_PASSPHRASE=""
-export AWS_PROFILE=""
-export AWS_DEFAULT_PROFILE=""
+export AWS_PROFILE="vanmoof"
+export AWS_DEFAULT_PROFILE="vanmoof"
 export AWS_VAULT_PROMPT="osascript"
 export AWS_VAULT_KEYCHAIN_NAME="login"
 export AWS_VAULT_BACKEND="keychain"
