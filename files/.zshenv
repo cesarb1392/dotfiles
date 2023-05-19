@@ -14,9 +14,9 @@ export GPG_TTY=$(tty)
 export LANG="en_US.UTF-8"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-export KUBECONFIG="$HOME/.kube/kubeconfig"
+# export KUBECONFIG="$HOME/.kube/kubeconfig:$HOME/.kube/kubeconfig2"
+export KUBECONFIG="$HOME/.kube/config:$(find . -type f | tr '\n' ':')"
 
 export AWS_VAULT_BACKEND="file"
 export AWS_VAULT_FILE_PASSPHRASE=""
