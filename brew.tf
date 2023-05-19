@@ -16,6 +16,7 @@ locals {
     "helm",
     "httpie",
     "httping",
+    "jq",
     "k9s",
     "kubernetes-cli",
     "kubectx",
@@ -41,7 +42,9 @@ locals {
     "zoxide",
     "zsh",
     #gpg key
-    "gpg2", "zgnupg", "pinentry-mac"
+    "gpg2", "zgnupg", "pinentry-mac",
+    # pre commit tf
+    "pre-commit", "flint", "tfsec", "checkov", "terrascan", "infracost", "tfupdate"
   ]
 
   cmd_print_version = jsonencode({ "\"version\"" = "\"$(brew list --versions $PACKAGE)\"" })

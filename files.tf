@@ -12,13 +12,13 @@ locals {
       content  = file("${path.module}/files/.gitignore_global")
       filename = pathexpand("~/.gitignore_global")
     }
-    gitconfig = {
-      content = templatefile("${path.module}/files/.gitconfig", {
-        email = var.email
-        name  = var.name
-      })
-      filename = pathexpand("~/.gitconfig")
-    }
+    #    gitconfig = {
+    #      content = templatefile("${path.module}/files/.gitconfig", {
+    #        email = var.email
+    #        name  = var.name
+    #      })
+    #      filename = pathexpand("~/.gitconfig")
+    #    }
     aws_logout = {
       content  = file("${path.module}/files/aws_logout.scpt")
       filename = pathexpand("~/scripts/aws_logout.scpt")
@@ -44,10 +44,10 @@ locals {
       content  = file("${path.module}/files/starship.toml")
       filename = pathexpand("~/.config/starship.toml")
     }
-    #    terraform_docs = {
-    #      content  = file("${path.module}/files/terraform_docs.yml")
-    #      filename = pathexpand("~/.tfdocs.d/.terraform-docs.yml")
-    #    }
+    terraform_docs = {
+      content  = file("${path.module}/files/terraform-docs.yml")
+      filename = pathexpand("~/.tfdocs.d/.terraform-docs.yml")
+    }
   }
 }
 

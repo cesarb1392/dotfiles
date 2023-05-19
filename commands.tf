@@ -26,6 +26,8 @@ locals {
       EOF
     }
   }
+
+  tf_precommit_hook_dir = "=~/.git-tf-precommit-hook"
 }
 
 # move to shell_script
@@ -45,4 +47,18 @@ resource "terraform_data" "zsh_plugins" {
   }
 
   depends_on = [terraform_data.zsh]
+}
+
+
+resource "terraform_data" "git_tf_precommit_hook" {
+  # brew install pre-commit terraform-docs tflint tfsec checkov terrascan infracost tfupdate  jq
+  #DIR=~/.git-tf-precommit-hook
+  #git config --global init.templateDir ${DIR}
+  #pre-commit init-templatedir -t pre-commit ${DIR}
+  provisioner "local-exec" {
+    command = <<EOF
+        git config --global init.templateDir ${local.tf_precommit_hook_dir}
+        pre-commit init-templatedir -t pre-commit ${local.tf_precommit_hook_dir}
+      EOF
+  }
 }

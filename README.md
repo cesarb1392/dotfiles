@@ -29,6 +29,7 @@ No modules.
 |------|------|
 | [local_file.files](https://registry.terraform.io/providers/hashicorp/local/2.3.0/docs/resources/file) | resource |
 | [shell_script.brew_package](https://registry.terraform.io/providers/scottwinkler/shell/1.7.10/docs/resources/script) | resource |
+| [terraform_data.git_tf_precommit_hook](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [terraform_data.zsh](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [terraform_data.zsh_plugins](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 
