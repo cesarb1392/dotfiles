@@ -10,3 +10,7 @@ variable "email" {
 variable "name" {
   type = string
 }
+
+variable "signingkey" {
+  type = string
+}

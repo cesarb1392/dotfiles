@@ -39,6 +39,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_email"></a> [email](#input\_email) | n/a | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
+| <a name="input_signingkey"></a> [signingkey](#input\_signingkey) | n/a | `string` | n/a | yes |
 
 ## Outputs
 

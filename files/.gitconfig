@@ -1,7 +1,7 @@
 [user]
 	name = '${name}'
 	email = '${email}'
-# 	signingkey = <signingkey> # create it
+	signingkey = '${signingkey}'
 
 [color]
 	ui = auto
@@ -18,8 +18,8 @@
 	new = green
 
 [color "status"]
-	added = yellow
-	changed = green
+	added = green
+	changed = yellow
 	untracked = cyan
 
 [diff]
@@ -37,17 +37,23 @@
 [commit]
 	template = ~/.stCommitMsg
 	gpgsign = true
+
 [pull]
 	ff = only
 	rebase = true
+
 [init]
 	defaultBranch = main
-# 	templateDir = ~/.git-tf-precommit-hook
+	templateDir = ~/.git-tf-precommit-hook
+
 [push]
 	autoSetupRemote = true
 
 [gpg]
 	program = /usr/local/bin/gpg
+
 [alias]
-	actions = "!f() { gh run list --branch $(git rev-parse --abbrev-ref HEAD); }; f"
+	actions = "!f() { gh run list --branch $(git rev-parse --abbrev-ref HEAD); }; f" # todo: run first `gh auth login`
     ci = commit -v
+
+
