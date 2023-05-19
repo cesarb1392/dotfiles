@@ -12,14 +12,14 @@ locals {
       content  = file("${path.module}/files/.gitignore_global")
       filename = pathexpand("~/.gitignore_global")
     }
-    gitconfig = {
-      content = templatefile("${path.module}/files/.gitconfig", {
-        email      = var.email
-        name       = var.name
-        signingkey = var.signingkey
-      })
-      filename = pathexpand("~/.gitconfig")
-    }
+    #    gitconfig = {
+    #      content = templatefile("${path.module}/files/.gitconfig", {
+    #        email      = var.email
+    #        name       = var.name
+    #        signingkey = var.signingkey
+    #      })
+    #      filename = pathexpand("~/.gitconfig")
+    #    }
     aws_logout = {
       content  = file("${path.module}/files/aws_logout.scpt")
       filename = pathexpand("~/scripts/aws_logout.scpt")
