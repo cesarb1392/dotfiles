@@ -44,6 +44,10 @@ locals {
       content  = file("${path.module}/files/starship.toml")
       filename = pathexpand("~/.config/starship.toml")
     }
+    #    terraform_docs = {
+    #      content  = file("${path.module}/files/terraform_docs.yml")
+    #      filename = pathexpand("~/.tfdocs.d/.terraform-docs.yml")
+    #    }
   }
 }
 

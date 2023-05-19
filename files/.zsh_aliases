@@ -6,8 +6,8 @@ alias auth='unset AWS_VAULT &&  aws-vault exec vanmoof -t $(ykman oath accounts 
 
 # 1pass
 alias okta='export OKTA_API_TOKEN=$(op item list --tags Okta | op item get OKTA --fields OKTA_API_TOKEN)'
-alias aws-login2='unset AWS_VAULT && aws-vault login -t $(ykman oath accounts code aws --single)'
-alias aws-exec2='unset AWS_VAULT && aws-vault exec -t $(ykman oath accounts code aws --single)'
+alias aws-login2='unset AWS_VAULT && aws-vault login -t $(op item get aws --otp)'
+alias aws-exec2='unset AWS_VAULT && aws-vault exec -t $(op item get aws --otp)'
 
 # Terraform
 alias tf="terraform"

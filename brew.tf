@@ -41,7 +41,7 @@ locals {
     "zoxide",
     "zsh",
     #gpg key
-    "gpg2","zgnupg","pinentry-mac"
+    "gpg2", "zgnupg", "pinentry-mac"
   ]
 
   cmd_print_version = jsonencode({ "\"version\"" = "\"$(brew list --versions $PACKAGE)\"" })
