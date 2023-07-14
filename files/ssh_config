@@ -11,7 +11,7 @@ Host *
     ServerAliveCountMax 4
     Compression yes
 
-Host * !banana
+Host * !banana2
     LogLevel INFO
 
 Host banana
