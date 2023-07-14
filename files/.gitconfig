@@ -58,6 +58,7 @@
 
 [alias]
 	actions = "!f() { gh run list --branch $(git rev-parse --abbrev-ref HEAD); }; f" # todo: run first `gh auth login`
-    ci = commit -v
+        ci = commit -v
+
 [rebase]
 	autoStash = true
