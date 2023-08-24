@@ -7,8 +7,8 @@ Host *
     ForwardX11Trusted yes
     Protocol 2
     AddKeysToAgent yes
-    ServerAliveInterval 30
-    ServerAliveCountMax 4
+    ServerAliveInterval 500
+    ServerAliveCountMax 5
     Compression yes
 
 Host * !banana2

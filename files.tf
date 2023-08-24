@@ -4,26 +4,26 @@ locals {
       content  = file("${path.module}/files/ssh_config")
       filename = pathexpand("~/.ssh/config")
     }
-    mtmr = {
+    /* mtmr = {
       content  = file("${path.module}/files/mtmr.json")
       filename = pathexpand("~/Library/Application Support/MTMR/items.json")
-    }
+    } */
     gitignore_global = {
       content  = file("${path.module}/files/.gitignore_global")
       filename = pathexpand("~/.gitignore_global")
     }
-    #    gitconfig = {
-    #      content = templatefile("${path.module}/files/.gitconfig", {
-    #        email      = var.email
-    #        name       = var.name
-    #        signingkey = var.signingkey
-    #      })
-    #      filename = pathexpand("~/.gitconfig")
-    #    }
-    aws_logout = {
+    gitconfig = {
+      content = templatefile("${path.module}/files/.gitconfig", {
+        email      = var.email
+        name       = var.name
+        signingkey = var.signingkey
+      })
+      filename = pathexpand("~/.gitconfig")
+    }
+    /* aws_logout = {
       content  = file("${path.module}/files/aws_logout.scpt")
       filename = pathexpand("~/scripts/aws_logout.scpt")
-    }
+    } */
 
     zshrc = {
       content  = file("${path.module}/files/.zshrc")

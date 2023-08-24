@@ -44,7 +44,11 @@ locals {
     #gpg key
     "gpg2", "zgnupg", "pinentry-mac",
     # pre commit tf
-    "pre-commit", "flint", "tfsec", "checkov", "terrascan", "infracost", "tfupdate"
+    "pre-commit", "flint", "tfsec", "checkov", "terrascan", "infracost", "tfupdate",
+
+    # ext4
+    # brew install macFuse
+    # brew install --formula --build-from-source ext4fuse.rb
   ]
 
   cmd_print_version = jsonencode({ "\"version\"" = "\"$(brew list --versions $PACKAGE)\"" })
