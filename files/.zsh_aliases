@@ -2,13 +2,13 @@
 # alias aws-login='osascript ~/scripts/aws_logout.scpt && aws-vault login -t $(ykman oath accounts code aws --single)'
 alias aws-login='unset AWS_VAULT && aws-vault login -t $(ykman oath accounts code aws --single)'
 alias aws-exec='unset AWS_VAULT && aws-vault exec -t $(ykman oath accounts code aws --single)'
-alias auth='unset AWS_VAULT &&  aws-vault exec vanmoof -t $(ykman oath accounts code aws --single)'
+alias auth='unset AWS_VAULT &&  aws-vault exec "profile" -t $(ykman oath accounts code aws --single)'
 
 # 1pass
 alias okta='export OKTA_API_TOKEN=$(op item list --tags Okta | op item get OKTA --fields OKTA_API_TOKEN)'
 alias aws-login2='unset AWS_VAULT && aws-vault login -t $(op item get aws --otp)'
 alias aws-exec2='unset AWS_VAULT && aws-vault exec -t $(op item get aws --otp)'
-alias auth2='unset AWS_VAULT && aws-vault exec vanmoof -t $(op item get aws --otp)'
+alias auth2='unset AWS_VAULT && aws-vault exec "profile" -t $(op item get aws --otp)'
 
 # Terraform
 alias tf="terraform"
@@ -16,7 +16,7 @@ alias tcl="terraform fmt -recursive . && terraform-docs ."
 alias init="terraform init"
 alias plan="terraform plan"
 alias apply="terraform apply"
-alias save-plan="plan -out tf.plan && terraform show -no-color tf.plan > tfplan.txt"
+alias save_lan="plan -out tf.plan && terraform show -no-color tf.plan > tfplan.txt"
 
 # stuff
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
@@ -24,6 +24,7 @@ alias webstorm="open -a /Applications/WebStorm.app"
 #alias chromium="open -n -a /Applications/Chromium.app/Contents/MacOS/Chromium  --args --user-data-dir='~/chromium_dev_test' --disable-web-security"
 #alias chrome="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --disable-web-security"
 alias list="exa -l"
+alias ll="ls -ahtl"
 alias -s txt=micro
 alias -s py=micro
 alias -s json=micro

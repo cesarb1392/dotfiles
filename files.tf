@@ -12,14 +12,15 @@ locals {
       content  = file("${path.module}/files/.gitignore_global")
       filename = pathexpand("~/.gitignore_global")
     }
-    gitconfig = {
-      content = templatefile("${path.module}/files/.gitconfig", {
-        email      = var.email
-        name       = var.name
-        signingkey = var.signingkey
-      })
-      filename = pathexpand("~/.gitconfig")
-    }
+    # setup manually configuring gpg key
+    # gitconfig = {
+    #   content = templatefile("${path.module}/files/.gitconfig", {
+    #     email      = var.email
+    #     name       = var.name
+    #     signingkey = var.signingkey
+    #   })
+    #   filename = pathexpand("~/.gitconfig")
+    # }
     /* aws_logout = {
       content  = file("${path.module}/files/aws_logout.scpt")
       filename = pathexpand("~/scripts/aws_logout.scpt")
@@ -37,10 +38,11 @@ locals {
       content  = file("${path.module}/files/.zsh_aliases")
       filename = pathexpand("~/.zsh_aliases")
     }
-    fzf_zsh = {
-      content  = file("${path.module}/files/.fzf.zsh")
-      filename = pathexpand("~/.fzf.zsh")
-    }
+    # manually installed running: /opt/homebrew/opt/fzf/install
+    # fzf_zsh = {
+    #   content  = file("${path.module}/files/.fzf.zsh")
+    #   filename = pathexpand("~/.fzf.zsh")
+    # }
     starship = {
       content  = file("${path.module}/files/starship.toml")
       filename = pathexpand("~/.config/starship.toml")

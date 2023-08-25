@@ -12,16 +12,17 @@ export TF_LOG='error'
 export K9S_EDITOR="micro"
 export GPG_TTY=$(tty)
 export LANG="en_US.UTF-8"
+export TERM=xterm-256color
 
 export NVM_DIR="$HOME/.nvm"
 
-export KUBECONFIG="$HOME/.kube/kubeconfig:$HOME/.kube/VanMoof/kubeconfig"
+export KUBECONFIG="$HOME/.kube/kubeconfig"
 # export KUBECONFIG="$HOME/.kube/config:$(find . -type f | tr '\n' ':')"
 
 export AWS_VAULT_BACKEND="file"
 export AWS_VAULT_FILE_PASSPHRASE=""
-export AWS_PROFILE="vanmoof"
-export AWS_DEFAULT_PROFILE="vanmoof"
+export AWS_PROFILE="default"
+export AWS_DEFAULT_PROFILE="default"
 export AWS_VAULT_PROMPT="osascript"
 export AWS_VAULT_KEYCHAIN_NAME="login"
 export AWS_VAULT_BACKEND="keychain"
