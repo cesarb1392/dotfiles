@@ -1,5 +1,4 @@
 Host *
-    ServerAliveInterval 300
     TCPKeepAlive yes
     ForwardAgent yes
     GSSAPIAuthentication yes
@@ -14,10 +13,4 @@ Host *
 Host * !banana2
     LogLevel INFO
 
-Host banana
-    HostName x.x.x.x
-    PreferredAuthentications publickey
-    IdentitiesOnly yes
-    User x
-    IdentityFile ~/.ssh/id_rsa
-
+${ssh_hosts}

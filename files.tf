@@ -1,7 +1,20 @@
 locals {
   files = {
     ssh_config = {
-      content  = file("${path.module}/files/ssh_config")
+      content = templatefile("${path.module}/files/ssh_config.tpl", {
+        ssh_hosts = <<-EOT
+          %{for host in var.ssh_hosts~}
+Host ${host.name}
+              HostName ${host.address}
+              PreferredAuthentications publickey
+              IdentitiesOnly yes
+              User ${host.user}
+              IdentityFile ${host.identity_file_path}
+              Port ${try(host.port, null) != null ? host.port : 22}
+
+          %{endfor~}
+      EOT
+      })
       filename = pathexpand("~/.ssh/config")
     }
     /* mtmr = {

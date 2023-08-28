@@ -40,6 +40,7 @@ No modules.
 | <a name="input_email"></a> [email](#input\_email) | n/a | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
 | <a name="input_signingkey"></a> [signingkey](#input\_signingkey) | n/a | `string` | n/a | yes |
+| <a name="input_ssh_hosts"></a> [ssh\_hosts](#input\_ssh\_hosts) | n/a | <pre>list(object({<br>    name               = string<br>    address            = string<br>    user               = string<br>    identity_file_path = string<br>    port               = optional(number)<br>  }))</pre> | n/a | yes |
 
 ## Outputs
 

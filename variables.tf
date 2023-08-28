@@ -14,3 +14,13 @@ variable "name" {
 variable "signingkey" {
   type = string
 }
+
+variable "ssh_hosts" {
+  type = list(object({
+    name               = string
+    address            = string
+    user               = string
+    identity_file_path = string
+    port               = optional(number)
+  }))
+}

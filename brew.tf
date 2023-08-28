@@ -24,6 +24,7 @@ locals {
     "lazygit",
     "libreoffice",
     "micro",
+    "neofetch",
     "node",
     "nordvpn",
     "nvm",
